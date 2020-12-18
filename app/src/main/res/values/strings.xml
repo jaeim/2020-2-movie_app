@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Movie</string>
+    <string name="nav_option_box">박스오피스</string>
+    <string name="nav_option_movies">나의 감상 목록</string>
+    <string name="nav_option_search">검색</string>
+    <string name="nav_option_favorite">즐겨찾기</string>
+    <string name="nav_option_theater">주변 영화관 찾기</string>
+    <string name="box_office_url">http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key=e67d9c6f2a38b88f466a71f2df8acdc6&amp;targetDt=</string>
+    <string name="kobis_movie_url">http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.xml?key=e67d9c6f2a38b88f466a71f2df8acdc6&amp;movieCd=</string>
+    <string name="api_url">https://openapi.naver.com/v1/search/movie.xml?start=1&amp;display=30&amp;query=</string>
+    <string name="api_key">AIzaSyDQ6VaCv2qoDUW4JWmu6DyjCehouEFio_g</string>
+    <string name="client_id">t6ZKsgU_VCMvmAjV1MTF</string>
+    <string name="client_secret">poGsxAqPX8</string>
+    <string name="init_lat">37.503231</string>
+    <string name="init_lng">127.025396</string>
+</resources>

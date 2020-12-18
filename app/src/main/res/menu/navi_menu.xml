@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_box"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:title="@string/nav_option_box" />
+        <item
+            android:id="@+id/menu_movies"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:title="@string/nav_option_movies" />
+        <item
+            android:id="@+id/menu_search"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:title="@string/nav_option_search" />
+        <item
+            android:id="@+id/menu_favorite"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:title="@string/nav_option_favorite"
+            />
+        <item
+            android:id="@+id/menu_theater"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:title="@string/nav_option_theater"
+            />
+    </group>
+</menu>
