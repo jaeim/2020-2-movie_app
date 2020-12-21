@@ -6,143 +6,153 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/favorite_poster"
-        android:layout_width="206dp"
-        android:layout_height="276dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="36dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/favorite_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/favorite_poster"
+            android:layout_width="206dp"
+            android:layout_height="276dp"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/favorite_title"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:text="title"
+        android:textColor="#3E3C3C"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/favorite_poster" />
+        app:layout_constraintTop_toBottomOf="@+id/favorite_card" />
 
     <TextView
         android:id="@+id/favorite_pub"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="pubDate"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/favorite_subtitle" />
 
     <TextView
         android:id="@+id/favorite_subtitle"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
         android:layout_marginTop="16dp"
         android:text="subTitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/favorite_title" />
 
     <TextView
         android:id="@+id/favorite_actor"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
         android:layout_marginTop="16dp"
         android:text="actor"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/favorite_director" />
 
     <TextView
         android:id="@+id/favorite_director"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:text="director"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/favorite_pub" />
 
     <Button
-        android:id="@+id/favorite_savebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/favorite_closebtn"
+        android:layout_width="44dp"
+        android:layout_height="40dp"
+        android:background="@drawable/close_big2"
         android:onClick="onClick"
-        android:text="감상평저장"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/favorite_hyper" />
+        app:layout_constraintTop_toBottomOf="@+id/favorite_savebtn"
+        app:layout_constraintVertical_bias="0.377" />
 
     <Button
-        android:id="@+id/favorite_closebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/favorite_savebtn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/save"
         android:onClick="onClick"
-        android:text="닫기"
-        app:layout_constraintStart_toEndOf="@+id/favorite_savebtn"
-        app:layout_constraintTop_toBottomOf="@+id/favorite_hyper" />
+        app:layout_constraintStart_toEndOf="@+id/favorite_hyper"
+        app:layout_constraintTop_toBottomOf="@+id/favorite_rating" />
 
     <RatingBar
         android:id="@+id/favorite_rating"
         style="@style/Widget.AppCompat.RatingBar.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="80dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
         android:numStars="5"
         android:stepSize="0.1"
+        android:progressTint="#8E97FD"
+        android:secondaryProgressTint="#8E97FD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/favorite_actor" />
 
     <Button
         android:id="@+id/favorite_hyper"
-        android:layout_width="80dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/detail"
         android:onClick="onClick"
-        android:text="상세보기"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/favorite_rating" />
 
     <Button
         android:id="@+id/favorite_sharebtn"
-        android:layout_width="77dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/share"
         android:onClick="onClick"
-        android:text="공유하기"
-        app:layout_constraintStart_toEndOf="@+id/favorite_hyper"
+        app:layout_constraintStart_toEndOf="@+id/favorite_searchBtn"
         app:layout_constraintTop_toBottomOf="@+id/favorite_rating" />
 
     <Button
         android:id="@+id/favorite_searchBtn"
-        android:layout_width="72dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/search_btn"
         android:onClick="onClick"
-        android:text="검색"
-        app:layout_constraintStart_toEndOf="@+id/favorite_sharebtn"
+        app:layout_constraintStart_toEndOf="@+id/favorite_savebtn"
         app:layout_constraintTop_toBottomOf="@+id/favorite_rating" />
 </androidx.constraintlayout.widget.ConstraintLayout>

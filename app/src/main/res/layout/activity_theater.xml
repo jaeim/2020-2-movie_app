@@ -14,7 +14,6 @@
             android:id="@+id/theater_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/teal_200"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintStart_toStartOf="parent"
@@ -22,12 +21,16 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="152dp"
-            android:layout_marginLeft="152dp"
-            android:layout_marginTop="16dp"
-            android:text="네비게이션 드로워"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginLeft="84dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginRight="21dp"
+            android:background="@drawable/near"
+            app:layout_constraintEnd_toStartOf="@+id/theater_findbtn"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/theater_toolbar" />
 
@@ -51,13 +54,13 @@
 
         <Button
             android:id="@+id/theater_findbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="312dp"
-            android:layout_marginLeft="312dp"
-            android:layout_marginTop="4dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/search"
             android:onClick="onClick"
-            android:text="찾기"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.929"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

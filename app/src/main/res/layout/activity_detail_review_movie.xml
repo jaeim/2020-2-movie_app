@@ -6,86 +6,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/review_poster"
-        android:layout_width="206dp"
-        android:layout_height="276dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="36dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/review_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/review_poster"
+            android:layout_width="206dp"
+            android:layout_height="276dp"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/review_title"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
         android:layout_marginTop="24dp"
         android:text="title"
+        android:textColor="#3E3C3C"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/review_poster" />
+        app:layout_constraintTop_toBottomOf="@+id/review_card" />
 
     <TextView
         android:id="@+id/review_pub"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="pubDate"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/review_subtitle" />
 
     <TextView
         android:id="@+id/review_subtitle"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
         android:layout_marginTop="16dp"
         android:text="subTitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/review_title" />
 
     <TextView
-        android:id="@+id/review_actor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
-        android:text="actor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/review_director" />
-
-    <TextView
         android:id="@+id/review_director"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:text="director"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/review_pub" />
 
     <Button
         android:id="@+id/review_favoritebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/favorite_1"
         android:onClick="onClick"
-        android:text="즐겨찾기"
-        app:layout_constraintStart_toEndOf="@+id/review_updatebtn"
+        app:layout_constraintStart_toEndOf="@+id/review_sharebtn"
         app:layout_constraintTop_toBottomOf="@+id/review_scroll" />
 
     <RatingBar
@@ -93,34 +85,39 @@
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
         android:numStars="5"
+        android:progressTint="#8E97FD"
+        android:secondaryProgressTint="#8E97FD"
         android:stepSize="0.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/review_actor" />
+        app:layout_constraintTop_toBottomOf="@+id/review_director" />
 
     <Button
         android:id="@+id/review_hyper"
-        android:layout_width="80dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/detail"
         android:onClick="onClick"
-        android:text="상세보기"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/review_actor" />
+        app:layout_constraintTop_toBottomOf="@+id/review_scroll"
+        app:layout_constraintVertical_bias="0.019" />
 
     <ScrollView
         android:id="@+id/review_scroll"
-        android:layout_width="267dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="292dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layout_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/review_rating">
 
@@ -128,42 +125,58 @@
             android:id="@+id/review_tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="TextView" />
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="4dp"
+            android:text="TextView"
+            android:textSize="16sp" />
     </ScrollView>
 
     <Button
         android:id="@+id/review_updatebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edit"
         android:onClick="onClick"
-        android:text="수정"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/review_scroll" />
+        app:layout_constraintBottom_toTopOf="@+id/review_scroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.737"
+        app:layout_constraintStart_toEndOf="@+id/review_rating"
+        app:layout_constraintTop_toBottomOf="@+id/review_director"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/review_sharebtn"
-        android:layout_width="67dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/share"
         android:onClick="onClick"
-        android:text="공유"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/review_hyper"
-        app:layout_constraintTop_toBottomOf="@+id/review_actor" />
+        app:layout_constraintTop_toBottomOf="@+id/review_scroll"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/review_searchBtn"
-        android:layout_width="73dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="12dp"
-        android:text="검색"
-        app:layout_constraintStart_toEndOf="@+id/review_sharebtn"
-        app:layout_constraintTop_toBottomOf="@+id/review_actor" />
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/search_btn"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/review_favoritebtn"
+        app:layout_constraintTop_toBottomOf="@+id/review_scroll" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

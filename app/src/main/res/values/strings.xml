@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Movie</string>
+    <string name="app_name">영화저장소</string>
     <string name="nav_option_box">박스오피스</string>
     <string name="nav_option_movies">나의 감상 목록</string>
     <string name="nav_option_search">검색</string>
