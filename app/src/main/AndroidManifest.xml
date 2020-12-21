@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="ddwc.mobile.finalproject.ma02_20170942">
+    package="ddwu.mobile.finalproject.ma02_20170942">
 
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -25,21 +25,21 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/api_key" />
 
-        <activity android:name="ddwc.mobile.finalproject.ma02_20170942.SplashActivity">
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170942.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ddwc.mobile.finalproject.ma02_20170942.MainActivity"></activity>
-        <activity android:name="ddwc.mobile.finalproject.ma02_20170942.DetailMovieActivity"></activity>
-        <activity android:name="ddwc.mobile.finalproject.ma02_20170942.WatchedMovieActivity"></activity>
-        <activity android:name="ddwc.mobile.finalproject.ma02_20170942.FavoriteMovieActivity"></activity>
-        <activity android:name="ddwc.mobile.finalproject.ma02_20170942.BoxOfficeActivity"></activity>
-        <activity android:name="ddwc.mobile.finalproject.ma02_20170942.DetailWatchedMovieActivity"></activity>
-        <activity android:name="ddwc.mobile.finalproject.ma02_20170942.DetailFavoriteActivity"></activity>
-        <activity android:name="ddwc.mobile.finalproject.ma02_20170942.NearByTheaterActivity"></activity>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170942.MainActivity"></activity>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170942.DetailMovieActivity"></activity>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170942.WatchedMovieActivity"></activity>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170942.FavoriteMovieActivity"></activity>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170942.BoxOfficeActivity"></activity>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170942.DetailWatchedMovieActivity"></activity>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170942.DetailFavoriteActivity"></activity>
+        <activity android:name="ddwu.mobile.finalproject.ma02_20170942.NearByTheaterActivity"></activity>
     </application>
 
 </manifest>
