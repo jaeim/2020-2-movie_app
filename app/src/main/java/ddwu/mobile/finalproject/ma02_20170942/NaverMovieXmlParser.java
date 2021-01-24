@@ -18,6 +18,7 @@ public class NaverMovieXmlParser {
     final static String TAG_ACTOR = "actor";
     final static String TAG_RATING = "userRating";
     final static String TAG_IMAGE = "image";
+    final static String TAG_ERROR =  "errorMessage";
 
     public NaverMovieXmlParser() {
     }
@@ -59,6 +60,8 @@ public class NaverMovieXmlParser {
                             if (dto != null) tagType = TagType.RATING;
                         } else if (parser.getName().equals(TAG_IMAGE)) {
                             if (dto != null) tagType = TagType.IMAGE;
+                        } else if (parser.getName().equals(TAG_ERROR)) {
+                            return null;
                         }
                         break;
                     case XmlPullParser.END_TAG:

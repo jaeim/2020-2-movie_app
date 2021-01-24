@@ -178,8 +178,9 @@ public class BoxOfficeActivity extends AppCompatActivity {
             progressDlg.dismiss();
             resultList = (ArrayList<DailyBoxOfficeDto>) parser.parse(result);
             // notify까지 수행함
-            adapter.setList(resultList);
-
+            if (resultList != null) {
+                adapter.setList(resultList);
+            }
         }
     }
     // 영화 진흥 위원회 영화 상세 정보 API
@@ -210,54 +211,55 @@ public class BoxOfficeActivity extends AppCompatActivity {
             super.onPostExecute(result);
             // 영화 진흥 위원회 api를 통해 영화 정보를 가져오고 다이얼로그로 띄움
             detailMovie = (KobisMovieDto) movieParser.parse(result);
+            if (detailMovie != null) {
+                builder = new AlertDialog.Builder(BoxOfficeActivity.this);
+                custom_kobis_dialog = View.inflate(BoxOfficeActivity.this, R.layout.dialog_kobis_movie, null);
 
-            builder = new AlertDialog.Builder(BoxOfficeActivity.this);
-            custom_kobis_dialog = View.inflate(BoxOfficeActivity.this, R.layout.dialog_kobis_movie, null);
+                TextView tv_title = custom_kobis_dialog.findViewById(R.id.dialog_kobis_title);
+                TextView tv_enTitle = custom_kobis_dialog.findViewById(R.id.dialog_kobis_en);
+                TextView tv_openDt = custom_kobis_dialog.findViewById(R.id.dialog_kobis_date);
+                TextView tv_cn = custom_kobis_dialog.findViewById(R.id.dialog_kobis_cn);
+                TextView tv_director = custom_kobis_dialog.findViewById(R.id.dialog_kobis_director);
+                Button btn_close = custom_kobis_dialog.findViewById(R.id.dialog_kobis_closebtn);
 
-            TextView tv_title = custom_kobis_dialog.findViewById(R.id.dialog_kobis_title);
-            TextView tv_enTitle = custom_kobis_dialog.findViewById(R.id.dialog_kobis_en);
-            TextView tv_openDt = custom_kobis_dialog.findViewById(R.id.dialog_kobis_date);
-            TextView tv_cn = custom_kobis_dialog.findViewById(R.id.dialog_kobis_cn);
-            TextView tv_director = custom_kobis_dialog.findViewById(R.id.dialog_kobis_director);
-            Button btn_close = custom_kobis_dialog.findViewById(R.id.dialog_kobis_closebtn);
-
-            if (detailMovie.getMovieNm() == null || detailMovie.getMovieNm().equals("")) {
-                tv_title.setText("영화제목 정보 없음");
-            } else {
-                tv_title.setText(detailMovie.getMovieNm());
-            }
-            if (detailMovie.getMovieNmEn() == null || detailMovie.getMovieNmEn().equals("")) {
-                tv_enTitle.setText("영문제목 정보 없음");
-            } else {
-                tv_enTitle.setText("(" + detailMovie.getMovieNmEn() + ")");
-            }
-            if (detailMovie.getOpenDt() == null || detailMovie.getOpenDt().equals("")) {
-                tv_openDt.setText("개봉일 정보 없음");
-            } else {
-                tv_openDt.setText("개봉일 : " + detailMovie.getOpenDt());
-            }
-            if (detailMovie.getNations() == null || detailMovie.getNations().equals("")) {
-                tv_cn.setText("제작국가 정보 없음");
-            } else {
-                tv_cn.setText("제작국가 : " + detailMovie.getNations());
-            }
-            if (detailMovie.getDirectors() == null || detailMovie.getDirectors().equals("")) {
-                tv_director.setText("감독 정보 없음");
-            } else {
-                tv_director.setText("감독 : " + detailMovie.getDirectors());
-            }
-
-            btn_close.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    kobis_dialog.dismiss();
+                if (detailMovie.getMovieNm() == null || detailMovie.getMovieNm().equals("")) {
+                    tv_title.setText("영화제목 정보 없음");
+                } else {
+                    tv_title.setText(detailMovie.getMovieNm());
                 }
-            });
+                if (detailMovie.getMovieNmEn() == null || detailMovie.getMovieNmEn().equals("")) {
+                    tv_enTitle.setText("영문제목 정보 없음");
+                } else {
+                    tv_enTitle.setText("(" + detailMovie.getMovieNmEn() + ")");
+                }
+                if (detailMovie.getOpenDt() == null || detailMovie.getOpenDt().equals("")) {
+                    tv_openDt.setText("개봉일 정보 없음");
+                } else {
+                    tv_openDt.setText("개봉일 : " + detailMovie.getOpenDt());
+                }
+                if (detailMovie.getNations() == null || detailMovie.getNations().equals("")) {
+                    tv_cn.setText("제작국가 정보 없음");
+                } else {
+                    tv_cn.setText("제작국가 : " + detailMovie.getNations());
+                }
+                if (detailMovie.getDirectors() == null || detailMovie.getDirectors().equals("")) {
+                    tv_director.setText("감독 정보 없음");
+                } else {
+                    tv_director.setText("감독 : " + detailMovie.getDirectors());
+                }
 
-            builder.setView(custom_kobis_dialog);
-            kobis_dialog = builder.create();
-            kobis_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            kobis_dialog.show();
+                btn_close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        kobis_dialog.dismiss();
+                    }
+                });
+
+                builder.setView(custom_kobis_dialog);
+                kobis_dialog = builder.create();
+                kobis_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                kobis_dialog.show();
+            }
         }
     }
 

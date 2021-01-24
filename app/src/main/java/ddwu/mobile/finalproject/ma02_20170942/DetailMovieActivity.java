@@ -79,8 +79,6 @@ public class DetailMovieActivity extends AppCompatActivity {
                 //초기화 (네트워크가 느리면 일단 이미지를 기본 이미지로 설정)
                 poster.setImageResource(R.mipmap.ic_launcher);
                 poster.setImageBitmap(savedBitmap);
-                //현재 이 뷰홀더에서 가져온 네트워크 정보를 넣어줘야하니까 뷰홀더를 생성자에 전달받게한다!
-                //안그러면 지금 다운로드한 이미지가 어느 뷰홀더의 이미지뷰인지 뒤죽박죽 헷갈려서 엉뚱한 이미지가 엉뚱한 책의 표지로 들어갈 수 있곘지
                 new GetImageAsyncTask().execute(movie.getImageLink());
             }
         }

@@ -230,15 +230,17 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             resultList = parser.parse(result);
-            for (NaverMovieDto dto : resultList) {
-                Bitmap bitmap = networkManager.downloadImage(dto.getImageLink());
-                if (bitmap != null) {
-                    Log.d(TAG, "bitmap is not null");
-                    imageFileManager.saveBitmapToTemporary(bitmap, dto.getImageLink());
+            if (resultList != null) {
+                for (NaverMovieDto dto : resultList) {
+                    Bitmap bitmap = networkManager.downloadImage(dto.getImageLink());
+                    if (bitmap != null) {
+                        Log.d(TAG, "bitmap is not null");
+                        imageFileManager.saveBitmapToTemporary(bitmap, dto.getImageLink());
+                    }
                 }
+                // notify까지 수행함
+                adapter.setList(resultList);
             }
-            // notify까지 수행함
-            adapter.setList(resultList);
             progressDlg.dismiss();
         }
     }

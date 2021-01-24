@@ -164,7 +164,7 @@ public class WatchedMovieActivity extends AppCompatActivity {
 //        resultList.clear();
 //        resultList.addAll(movieDBManager.getAllMovieFromWatched());
 //        adapter.notifyDataSetChanged();
-//        getAllMovies();
+        getAllMovies();
     }
     // 툴바 버튼의 클릭 이벤트를 정의
     @Override
