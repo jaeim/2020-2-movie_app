@@ -29,4 +29,4 @@
 
 ## 4. 시연 영상
 
-<iframe width="640" height="360" src="https://www.youtube.com/watch?v=oc15wm8cIdU" frameborder="0" gesture="media" allowfullscreen=""></iframe>
+[![Watch the video](https://i.imgur.com/pN8BXeE.png)](https://www.youtube.com/watch?v=oc15wm8cIdU)
